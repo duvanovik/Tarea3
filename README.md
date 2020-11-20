@@ -1,4 +1,4 @@
-# SHORT ROUTE SYSTEM USING GRAPHICS
+# SHORT ROUTE SYSTEM USING GRAPHS
 
 This software is responsible for finding the shortest route between two points of a graph and giving certain information, all this represented as a software that is responsible for finding the shortest route between several cities in Colombia.
 

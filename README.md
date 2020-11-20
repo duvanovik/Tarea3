@@ -16,8 +16,11 @@ After generating the route we can see on the map how the other cities disappeare
 
 
 **Statement of the problem.**
+[Statement](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/docs/Enunciado%20del%20problema.docx)
 
-[Documentation](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/docs/Enunciado%20del%20problema.docx)
+
+**Engineering report**
+[Engineering report](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/docs/Informe%20Final.docx)
 
 
 **Technical conditions**

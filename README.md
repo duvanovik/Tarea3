@@ -4,6 +4,24 @@ This software is responsible for finding the shortest route between two points o
 
 **Generate route**
 
-Here you can generate a large number of random elements represented by people.
+You can select 2 points within the map that represent cities in Colombia, and then press the "Calculate" button to generate the route and see some relevant data.
 
-![generate data](https://github.com/andrescuellar123/Data-Base/blob/main/Resources/generardatos.png)
+![generate route](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/Resources/readme1.png)
+
+After generating the route we can see on the map how the other cities disappeared and now a road appears which indicates the path to take to reach our destination.
+
+![generate route](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/Resources/readme2.png)
+
+# DOCUMENTATION
+
+
+**Statement of the problem.**
+
+[Documentation](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/docs/Enunciado%20del%20problema.docx)
+
+
+**Technical conditions**
+
+Language: Java
+Operative System: Windows 10
+Development: Eclipse 2020-06

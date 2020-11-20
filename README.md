@@ -12,3 +12,16 @@ After generating the route we can see on the map how the other cities disappeare
 
 ![generate route](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/Resources/readme2.png)
 
+# DOCUMENTATION
+
+
+**Statement of the problem.**
+
+[Documentation](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/docs/Enunciado%20del%20problema.docx)
+
+
+**Technical conditions**
+
+Language: Java
+Operative System: Windows 10
+Development: Eclipse 2020-06

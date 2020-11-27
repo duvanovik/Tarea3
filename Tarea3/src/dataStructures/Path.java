@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 /**
  * A class that represents a path.
- * 
- * @author JuanchoVelezPro.
- *
  * @param <T> The vertex type.
  * @param <E> The edge type.
  */
@@ -53,7 +50,6 @@ public class Path<T extends Comparable<T>, E extends Comparable<E>> implements C
 
 	/**
 	 * A method to get the integers path.
-	 * 
 	 * @return Returns the array of this integers.
 	 */
 	public int[] getPath() {
@@ -62,7 +58,6 @@ public class Path<T extends Comparable<T>, E extends Comparable<E>> implements C
 
 	/**
 	 * A method to modify the current integer path array.
-	 * 
 	 * @param path The new integer path array.
 	 */
 	public void setPath(int[] path) {

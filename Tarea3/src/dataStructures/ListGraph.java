@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class GraphByLists<T extends Comparable<T>, E extends Comparable<E>> implements IGraph<T, E> {
+public class ListGraph<T extends Comparable<T>, E extends Comparable<E>> implements IGraph<T, E> {
 
 
 	private ArrayList<ArrayList<Vertex<T>>> adjList;
@@ -13,7 +13,7 @@ public class GraphByLists<T extends Comparable<T>, E extends Comparable<E>> impl
 
 	private ArrayList<Edge<E>> edges;
 
-	public GraphByLists(int numVertex) {
+	public ListGraph(int numVertex) {
 
 		adjList = new ArrayList<ArrayList<Vertex<T>>>(numVertex);
 		vertices = new ArrayList<>(numVertex);

@@ -2,14 +2,14 @@ package dataStructures;
 
 import java.util.ArrayList;
 
-public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> implements IGraph<T, E> {
+public class MatrixGraph<T extends Comparable<T>, E extends Comparable<E>> implements IGraph<T, E> {
 
 	private ArrayList<Edge<E>>[][] adjMatrix;
 	private ArrayList<Vertex<T>> vertices;
 	private ArrayList<Edge<E>> edges;
 	private int numVertex;
 
-	public GraphByMatrix(int numVertex) {
+	public MatrixGraph(int numVertex) {
 
 		this.numVertex = numVertex;
 

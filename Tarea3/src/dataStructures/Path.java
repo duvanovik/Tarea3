@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Path<T extends Comparable<T>, E extends Comparable<E>> implements Comparable<Path<T, E>> {
 
-	private GraphByLists<T, E> list;
+	private ListGraph<T, E> list;
 
-	private GraphByMatrix<T, E> matrix;
+	private MatrixGraph<T, E> matrix;
 
 	private ArrayList<Vertex<T>> vertices;
 
 	private int[] path;
 
-	public Path(GraphByLists<T, E> list, GraphByMatrix<T, E> matrix, int[] path) {
+	public Path(ListGraph<T, E> list, MatrixGraph<T, E> matrix, int[] path) {
 
 		this.list = list;
 		this.matrix = matrix;

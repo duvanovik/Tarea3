@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class GraphByListsTest {
 
-	private GraphByList<>;
+
 	
 	
 	@Test

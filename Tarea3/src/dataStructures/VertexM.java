@@ -1,4 +1,4 @@
-package ourGraph;
+package dataStructures;
 
 public class VertexM<V> {
     V value;

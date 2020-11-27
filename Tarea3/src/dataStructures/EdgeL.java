@@ -1,4 +1,4 @@
-package ourGraph;
+package dataStructures;
 
 public class EdgeL<V, E extends Comparable<E>> {
 

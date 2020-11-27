@@ -9,11 +9,6 @@ public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> imp
 	private ArrayList<Edge<E>> edges;
 	private int numVertex;
 
-	/**
-	 * Graph Constructor
-	 * 
-	 * @param numVertex The number of vertices that the graph will have.
-	 */
 	public GraphByMatrix(int numVertex) {
 
 		this.numVertex = numVertex;
@@ -26,9 +21,6 @@ public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> imp
 
 	}
 
-	/**
-	 * This method puts ArrayList in all matrix positions.
-	 */
 	private void initMatrix() {
 
 		for (int i = 0; i < adjMatrix.length; i++) {
@@ -47,14 +39,6 @@ public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> imp
 		this.edges = edges;
 	}
 
-	/**
-	 * This method gets the index where the vertex is saved. Then with this index,
-	 * it is possible to identify this vertex like a row or like a column in the
-	 * matrix
-	 * 
-	 * @param valueVertex The value of the vertex
-	 * @return The index where the vertex is saved in the vertices array.
-	 */
 	public int getIndexVertex(T valueVertex) {
 
 		int index = -1;
@@ -149,12 +133,6 @@ public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> imp
 
 	}
 
-	/**
-	 * Gets the edges of the specified vertex.
-	 * 
-	 * @param valueVertex The vertex to know its edges.
-	 * @return The edges of the specified vertex.
-	 */
 	public ArrayList<Edge<E>> getEdgesOfVertex(T valueVertex) {
 
 		int E = getIndexVertex(valueVertex);
@@ -174,25 +152,13 @@ public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> imp
 
 	}
 
-	/**
-	 * Gets the quantity of edges of the specified vertex.
-	 * 
-	 * @param valueVertex The vertex to know its quantity of edges.
-	 * @return The quantity of edges of the specified vertex.
-	 */
 	public int numEdgesOfVertex(T valueVertex) {
 
 		return getEdgesOfVertex(valueVertex).size();
 
 	}
 
-	/**
-	 * Gets the edges between two vertices.
-	 * 
-	 * @param vertexA The vertex "from" (origin of the edge)
-	 * @param vertexB The vertex "to" (where the edge ends)
-	 * @return The edges between two vertices specified.
-	 */
+
 	public ArrayList<Edge<E>> edgesBetween(T vertexA, T vertexB) {
 
 		ArrayList<Edge<E>> edges = new ArrayList<>();
@@ -229,12 +195,6 @@ public class GraphByMatrix<T extends Comparable<T>, E extends Comparable<E>> imp
 		this.vertices = vertices;
 	}
 
-	/**
-	 * Draw a graph with all connections Vertices-Edges. Including Directed and
-	 * Undirected edges between all vertices.
-	 * 
-	 * @return The graph like a string.
-	 */
 	public String graphToString() {
 
 		String g = "";

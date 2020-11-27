@@ -2,43 +2,16 @@ package dataStructures;
 
 import java.util.ArrayList;
 
-/**
- * A class that represents a path.
- * @param <T> The vertex type.
- * @param <E> The edge type.
- */
 public class Path<T extends Comparable<T>, E extends Comparable<E>> implements Comparable<Path<T, E>> {
 
-	/**
-	 * The graph by lists that the path uses.
-	 */
 	private GraphByLists<T, E> list;
 
-	/**
-	 * The graph by matrix that the path uses.
-	 */
 	private GraphByMatrix<T, E> matrix;
 
-	/**
-	 * A list where this class make the path.
-	 */
 	private ArrayList<Vertex<T>> vertices;
 
-	/**
-	 * A integer array representation of each path of each vertex in the original
-	 * graph vertices list. (The integers represents the postions of each vertices
-	 * in the original graph)
-	 */
 	private int[] path;
 
-	/**
-	 * The constructor of a Path. (If you use a type of graph the other will be null
-	 * !!!)
-	 * 
-	 * @param list   The graph the Path uses.
-	 * @param matrix The graph that the path uses.
-	 * @param path   The integers given by the method prim.
-	 */
 	public Path(GraphByLists<T, E> list, GraphByMatrix<T, E> matrix, int[] path) {
 
 		this.list = list;
@@ -48,18 +21,11 @@ public class Path<T extends Comparable<T>, E extends Comparable<E>> implements C
 
 	}
 
-	/**
-	 * A method to get the integers path.
-	 * @return Returns the array of this integers.
-	 */
 	public int[] getPath() {
 		return path;
 	}
 
-	/**
-	 * A method to modify the current integer path array.
-	 * @param path The new integer path array.
-	 */
+
 	public void setPath(int[] path) {
 		this.path = path;
 	}
@@ -77,13 +43,7 @@ public class Path<T extends Comparable<T>, E extends Comparable<E>> implements C
 		return 0;
 	}
 
-	/**
-	 * A method that create the path from one vertex to another.
-	 * 
-	 * @param from        The vertex where the path starts.
-	 * @param destination The vertex where the path ends.
-	 * @return Returns a list in order that how the path should be done.
-	 */
+
 	public ArrayList<Vertex<T>> creatingPath(Vertex<T> from, Vertex<T> destination) {
 
 		ArrayList<Vertex<T>> verticesDef = new ArrayList<>();

@@ -9,33 +9,70 @@ import java.util.*;
 public class Grafo{
     private HashMap<String, ArrayList<Nodo>> grafo;
     private boolean dirigido;
+    private int cantidadVertices;
+    private int cantidadAristas;
+    
     public Grafo(boolean dir){
         grafo = new HashMap<String, ArrayList<Nodo>>();
         dirigido = dir;
+        cantidadAristas=0;
+        cantidadVertices=0;
     }
 
-    public void agregarArista(String orig, String dest, int costo){
-        crearArista(orig,dest, costo);
+    /**
+     * Metodo encargado de agregar la arista al grafo.
+     * @param orig - Vertice tipo String de origen.
+     * @param dest - Vertice tipo String de destino.
+     * @param costo - Costo de recorrer la arista.
+     */
+    public boolean agregarArista(String orig, String dest, int costo){
+    	
+        if(grafo.containsKey(orig)){        
+        grafo.get(orig).add(new Nodo(dest,costo));
+        }
+        
         if(!dirigido){
-            crearArista(dest,orig, costo);
+            if(grafo.containsKey(dest)){        
+                grafo.get(dest).add(new Nodo(orig,costo));
+                cantidadAristas++;
+                }  
+        }
+        
+        if(grafo.containsKey(orig)&&grafo.containsKey(dest)) {
+        	
+        if(grafo.get(orig).contains(dest)||grafo.get(dest).contains(orig)) {
+        	return false;
+        }else {
+        	return true;
+        }
+        }else {
+        	return true;
         }
     }
 
-    private void crearArista(String ori, String dest, int costo){
-        if(!grafo.containsKey(ori)){
-            grafo.put(ori, new ArrayList<Nodo>());
-        }
-        grafo.get(ori).add(new Nodo(dest,costo));
-    }
 
-    public void eliminarArista(String ori, String dest){
-        elimArista(ori,dest);
+    
+    /**
+     * Metodo encargado de eliminar una arista.
+     * @param ori
+     * @param dest
+     */
+    public boolean eliminarArista(String ori, String dest){
+        
+    	boolean eliminado=elimArista(ori,dest);
         if(!dirigido){
-            elimArista(dest,ori);
+            return elimArista(dest,ori);
         }
+        
+        return eliminado;
     }
 
-    public void elimArista(String ori, String dest){
+    /**
+     * Metodo auxiliar para eliminar una arista del grafo.
+     * @param ori
+     * @param dest
+     */
+    public boolean elimArista(String ori, String dest){
         ArrayList<Nodo> lista= grafo.get(ori);
         boolean bb = false;
         if(lista != null){
@@ -44,25 +81,48 @@ public class Grafo{
                 if(ac.getVertice().equals(dest)){
                     lista.remove(i);
                     bb = true;
+                    cantidadAristas--;
+                    return true;
                 }
             }
         }
+        return false;
     }
 
+    
+    /**
+     * Metodo encargado de eliminar un vertice.
+     * @param v - El vertice de tipo String
+     */
     public void eliminarVertice(String v){
         ArrayList<Nodo> lista = grafo.get(v);
         ArrayList<String> destinos = new ArrayList<>();
+        if(lista!=null) {
         for(Nodo n : lista){
             destinos.add(n.getVertice());
         }
         grafo.remove(v);
+        cantidadVertices--;
         for(String s : destinos){
             eliminarArista(s, v);
         }
+        }
     }
 
-    public void agregarVertice(String v){
+    
+    /**
+     * Metodo encargado de agregar un vertice al grafo.
+     * @param v
+     */
+    public boolean agregarVertice(String v){
+    	
+    	if(!grafo.containsKey(v)) {
         grafo.put(v, new ArrayList<Nodo>());
+        cantidadVertices++;
+        return true;
+    	}else {
+    		return false;
+    	}
     }
 
     public ArrayList<String> bfs(String v){
@@ -160,8 +220,13 @@ public class Grafo{
     public int distanciaEntreCiudades(String orig, String dest) {
     	int distancia=0;
     	
+    	
     	HashMap<String, Integer> caminocorto =dijkstra(orig);
+    	if(caminocorto.containsKey(orig)&&caminocorto.containsKey(dest)) {
     	distancia=caminocorto.get(dest);
+    	}else {
+    		return 0;
+    	}
     	
     	return distancia;
     }
@@ -213,63 +278,7 @@ public class Grafo{
     }
     
     
-    public String dijkstraCaminoCorto(String orig,String dest){
-        HashMap<String, Integer> dist = new HashMap<>();
-        PriorityQueue<String> cola = new PriorityQueue<>();
-        for(String k : grafo.keySet()){
-            dist.put(k, Integer.MAX_VALUE/2);
-        }
-        dist.put(orig,0);
-        cola.add(orig);
-        boolean finCamino=false;
-        String camino=orig;
-    	String ultimo=orig;
 
-        
-        while(!cola.isEmpty()){
-            String ac = cola.poll();
-
-            ArrayList<Nodo> vecinos = grafo.get(ac);
-            if(vecinos != null){
-
-                for(Nodo n : vecinos){
-                    String vertSig = n.getVertice();
-                    int costo = n.getCosto();
-                    if(dist.get(ac)+costo < dist.get(vertSig)){
-                        dist.put(vertSig,dist.get(ac)+costo);
-                        cola.offer(vertSig);
-                        
-                        if(finCamino==false) {
-                        	
-                        	if(!ultimo.equals(getKeyFromValue(dist, dist.get(ac))+"")) {
-                        	camino+=","+getKeyFromValue(dist, dist.get(ac))+"";
-                        	ultimo=getKeyFromValue(dist, dist.get(ac))+"";
-                        	}
-                        	
-                        	if(vertSig==dest) {
-                            	camino+=","+vertSig;
-                        		finCamino=true;
-                        	}
-                        }
-                    }
-                }
-            }
-        }
-    	int distancia = distancia=dist.get(dest);
-
-        
-        return distancia+","+camino;
-    }
-
-    public static Object getKeyFromValue(Map hm, Object value) {
-        for (Object o : hm.keySet()) {
-          if (hm.get(o).equals(value)) {
-            return o;
-          }
-        }
-        return null;
-      }
-    
     
     public HashMap<String, Integer> bellman(String vo){
         HashMap<String, Integer> dist = new HashMap<>();
@@ -296,5 +305,40 @@ public class Grafo{
         return dist;
     }
 
+	public HashMap<String, ArrayList<Nodo>> getGrafo() {
+		return grafo;
+	}
+
+	public void setGrafo(HashMap<String, ArrayList<Nodo>> grafo) {
+		this.grafo = grafo;
+	}
+
+	public boolean isDirigido() {
+		return dirigido;
+	}
+
+	public void setDirigido(boolean dirigido) {
+		this.dirigido = dirigido;
+	}
+
+	public int getCantidadVertices() {
+		return cantidadVertices;
+	}
+
+	public void setCantidadVertices(int cantidadVertices) {
+		this.cantidadVertices = cantidadVertices;
+	}
+
+	public int getCantidadAristas() {
+		return cantidadAristas;
+	}
+
+	public void setCantidadAristas(int cantidadAristas) {
+		this.cantidadAristas = cantidadAristas;
+	}
+
+    
+    
+    
 }
 

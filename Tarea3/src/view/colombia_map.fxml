@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Colombia_Map_Controller">
+   <children>
+      <TextArea disable="true" layoutX="507.0" layoutY="16.0" prefHeight="178.0" prefWidth="177.0" />
+      <ImageView fitHeight="646.0" fitWidth="488.0" layoutX="14.0" layoutY="14.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/mapacolombia.jpg" />
+         </image>
+      </ImageView>
+      <Line fx:id="Medellin_Manizales" endX="-147.0" endY="172.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="-170.0" startY="125.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Manizales_Tunja" endX="-149.0" endY="169.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="-87.0" startY="169.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Yopal_Arauca" endX="-13.0" endY="172.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="9.0" startY="135.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Tunja_Yopal" endX="-93.0" endY="161.0" fill="#f80000eb" layoutX="346.0" layoutY="127.0" startX="-20.0" startY="161.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Manizales_Bucaramanga" endX="-85.0" endY="126.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="-146.0" startY="169.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Cali_Manizales" endX="-156.0" endY="161.0" fill="#f80000eb" layoutX="346.0" layoutY="127.0" startX="-217.0" startY="224.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Manizales_Bogota" endX="-142.0" endY="195.0" fill="#f80000eb" layoutX="356.0" layoutY="137.0" startX="-166.0" startY="151.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Cali_Bogota" endX="-154.0" endY="183.0" fill="#f80000eb" layoutX="366.0" layoutY="147.0" startX="-236.0" startY="205.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Barranquilla_Rioacha" endX="-3.0" endY="1.0" fill="#f80000eb" layoutX="286.0" layoutY="67.0" startX="-99.0" startY="35.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Cartagena_Barranquilla" endX="-115.0" endY="51.0" fill="#f80000eb" layoutX="296.0" layoutY="77.0" startX="-109.0" startY="26.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Monteria_Cartagena" endX="-151.0" endY="86.0" fill="#f80000eb" layoutX="306.0" layoutY="87.0" startX="-124.0" startY="41.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Monteria_Medellin" endX="-161.0" endY="77.0" fill="#f80000eb" layoutX="316.0" layoutY="97.0" startX="-149.0" startY="145.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Quibdo_Medellin" endX="-207.0" endY="181.0" fill="#f80000eb" layoutX="326.0" layoutY="107.0" startX="-160.0" startY="135.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Quibdo_Cali" endX="-217.0" endY="171.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="-208.0" startY="235.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Popayan_Cali" endX="-229.0" endY="275.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="-207.0" startY="235.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Pasto_Popayan" endX="-262.0" endY="318.0" fill="#f80000eb" layoutX="336.0" layoutY="117.0" startX="-228.0" startY="274.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Tunja_Bucaramanga" endX="9.0" endY="182.5" fill="#f80000eb" layoutX="241.0" layoutY="105.0" startX="9.0" startY="135.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Villavicencio_Yopal" endX="73.0" endY="174.0" fill="#f80000eb" layoutX="251.0" layoutY="115.0" startX="44.0" startY="247.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Bogota_Villavicencio" endX="35.0" endY="237.0" fill="#f80000eb" layoutX="261.0" layoutY="125.0" startX="-47.0" startY="207.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Villavicencio_Mitu" endX="61.0" endY="321.0" fill="#f80000eb" layoutX="271.0" layoutY="135.0" startX="24.0" startY="229.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Popayan_Mocoa" endX="-131.0" endY="329.0" fill="#f80000eb" layoutX="271.0" layoutY="135.0" startX="-164.0" startY="257.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Pasto_Mocoa" endX="25.0" endY="241.0" fill="#f80000eb" layoutX="117.0" layoutY="224.0" startX="-47.0" startY="207.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Mocoa_Leticia" endX="11.0" endY="229.0" fill="#f80000eb" layoutX="127.0" layoutY="234.0" startX="228.0" startY="382.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Mocoa_Mitu" endX="10.29290771484375" endY="228.29290771484375" fill="#f80000eb" layoutX="127.0" layoutY="234.0" startX="203.0" startY="221.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Mitu_Leticia" endX="206.0" endY="223.0" fill="#f80000eb" layoutX="127.0" layoutY="234.0" startX="227.0" startY="385.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Monteria_Bucaramanga" endX="-161.0" endY="76.0" fill="#f80000eb" layoutX="316.0" layoutY="97.0" startX="-65.0" startY="146.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Bucaramanga_Arauca" endX="-75.0" endY="135.0" fill="#f80000eb" layoutX="326.0" layoutY="107.0" startX="18.0" startY="143.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Medellin_Bucaramanga" endX="-74.29290771484375" endY="135.29290771484375" fill="#f80000eb" layoutX="326.0" layoutY="107.0" startX="-161.0" startY="135.0" stroke="#ff0404" visible="false" />
+      <Line fx:id="Bogota_Tunja" endX="-125.0" endY="132.0" fill="#f80000eb" layoutX="376.0" layoutY="157.0" startX="-163.0" startY="174.0" stroke="#ff0404" visible="false" />
+      <CheckBox fx:id="Quibdo" layoutX="111.0" layoutY="278.0" mnemonicParsing="false" text="Quibdo" />
+      <CheckBox fx:id="Leticia" layoutX="346.0" layoutY="606.0" mnemonicParsing="false" text="Leticia" />
+      <CheckBox fx:id="Cali" layoutX="118.0" layoutY="343.0" mnemonicParsing="false" text="Cali" />
+      <CheckBox fx:id="Popayan" layoutX="98.0" layoutY="381.0" mnemonicParsing="false" text="Popayan" />
+      <CheckBox fx:id="Pasto" layoutX="65.0" layoutY="423.0" mnemonicParsing="false" text="Pasto" />
+      <CheckBox fx:id="Mocoa" layoutX="132.0" layoutY="454.0" mnemonicParsing="false" text="Mocoa" />
+      <CheckBox fx:id="Rioacha" layoutX="275.0" layoutY="58.0" mnemonicParsing="false" text="Rioacha" />
+      <CheckBox fx:id="Barranquilla" layoutX="179.0" layoutY="92.0" mnemonicParsing="false" text="Barranquilla" />
+      <CheckBox fx:id="Arauca" layoutX="336.0" layoutY="241.0" mnemonicParsing="false" text="Arauca" />
+      <CheckBox fx:id="Cartagena" layoutX="172.0" layoutY="118.0" mnemonicParsing="false" text="Cartagena" />
+      <CheckBox fx:id="Bucaramanga" layoutX="242.0" layoutY="233.0" mnemonicParsing="false" text="Bucaramanga" />
+      <CheckBox fx:id="Tunja" layoutX="242.0" layoutY="278.0" mnemonicParsing="false" text="Tunja" />
+      <CheckBox fx:id="Manizales" layoutX="179.0" layoutY="278.0" mnemonicParsing="false" text="Manizales" />
+      <CheckBox fx:id="Bogota" layoutX="205.0" layoutY="322.0" mnemonicParsing="false" text="Bogotá" />
+      <CheckBox fx:id="Yopal" layoutX="316.0" layoutY="278.0" mnemonicParsing="false" text="Yopal" />
+      <CheckBox fx:id="Villavicencio" layoutX="286.0" layoutY="352.0" mnemonicParsing="false" text="Villavicencio" />
+      <CheckBox fx:id="Mitu" layoutX="324.0" layoutY="446.0" mnemonicParsing="false" text="Mitú" />
+      <CheckBox fx:id="Monteria" layoutX="146.0" layoutY="164.0" mnemonicParsing="false" text="Montería" />
+      <Button layoutX="566.0" layoutY="208.0" mnemonicParsing="false" onAction="#reiniciarGPS" text="Reiniciar" />
+      <Separator layoutX="494.0" layoutY="13.0" orientation="VERTICAL" prefHeight="636.0" prefWidth="7.0" />
+      <Button layoutX="65.0" layoutY="594.0" mnemonicParsing="false" onAction="#calcularRuta" text="CALCULAR" />
+      <Separator layoutX="11.0" layoutY="13.0" orientation="VERTICAL" prefHeight="636.0" prefWidth="7.0" />
+      <Separator layoutX="13.0" layoutY="648.0" prefHeight="0.0" prefWidth="483.0" />
+      <Separator layoutX="14.0" layoutY="13.0" prefHeight="0.0" prefWidth="483.0" />
+      <CheckBox fx:id="Medellin" layoutX="158.0" layoutY="232.0" mnemonicParsing="false" text="Medellin" />
+      <Text layoutX="560.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu ruta es:" />
+      <Text fx:id="txtOrigenDestino" layoutX="527.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - " textOrigin="TOP" wrappingWidth="152.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtDistancia" layoutX="532.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distancia: 0 km" />
+      <Text fx:id="txtCiudades" layoutX="532.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciudades: 0" />
+      <Text fx:id="txtTiempo" layoutX="532.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo: 0 horas" />
+      <ImageView fitHeight="74.0" fitWidth="177.0" layoutX="507.0" layoutY="247.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/Sabrosura-e1517932783873-1024x333.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="116.0" fitWidth="177.0" layoutX="507.0" layoutY="309.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/medellin.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="218.0" fitWidth="194.0" layoutX="507.0" layoutY="429.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/cartagena.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="textCiudades" layoutX="374.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+   </children>
+</AnchorPane>

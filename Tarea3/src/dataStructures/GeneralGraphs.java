@@ -15,7 +15,7 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	// DFS by graph by Matrix Aux
 
 
-
+    //354926
 	private ArrayList<Vertex<T>> DFS(MatrixGraph<T, E> g, Vertex<T> v, boolean[] visited, Stack<Vertex<T>> stack,
 			ArrayList<Vertex<T>> dfs) {
 
@@ -52,8 +52,6 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	}
 
 	// DFS by graph by Matrix
-
-
 	public ArrayList<Vertex<T>> DFS(MatrixGraph<T, E> g, Vertex<T> v) {
 
 		boolean[] visited = new boolean[g.getVertices().size()];
@@ -66,8 +64,6 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	}
 
 	// DFS by graph Lists Aux
-
-
 	private ArrayList<Vertex<T>> DFS(ListGraph<T, E> g, Vertex<T> v, boolean[] visited, Stack<Vertex<T>> stack,
 			ArrayList<Vertex<T>> dfs) {
 
@@ -104,8 +100,6 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	}
 
 	// DFS by Graph by lists.
-
-
 	public ArrayList<Vertex<T>> DFS(ListGraph<T, E> g, Vertex<T> v) {
 
 		boolean[] visited = new boolean[g.getVertices().size()];
@@ -118,8 +112,6 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	}
 
 	// BFS by graph by Matrix. Aux
-
-
 	private ArrayList<Vertex<T>> BFS(MatrixGraph<T, E> g, Vertex<T> v, boolean[] visited, Queue<Vertex<T>> queue,
 			ArrayList<Vertex<T>> bfs) {
 
@@ -149,8 +141,6 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	}
 
 	// BFS by graph by Matrix.
-
-
 	public ArrayList<Vertex<T>> BFS(MatrixGraph<T, E> g, Vertex<T> v) {
 
 		boolean[] visited = new boolean[g.getVertices().size()];
@@ -163,7 +153,6 @@ public class GeneralGraphs<T extends Comparable<T>, E extends Comparable<E>> {
 	}
 
 	// BFS by graph by Lists Aux.
-
 	private ArrayList<Vertex<T>> BFS(ListGraph<T, E> g, Vertex<T> v, boolean[] visited, Queue<Vertex<T>> queue,
 			ArrayList<Vertex<T>> bfs) {
 

@@ -6,22 +6,17 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
-import dataStructures.GeneralGraphs;
-import dataStructures.MatrixGraph;
-import dataStructures.Vertex;
-import model.City;
+import structures.Grafo;
 
-class GeneralGraphsTest {
+class GrafoTest {
 
 
-	private GeneralGraphs graph; 
-	private MatrixGraph mGraph;
+	private Grafo graph;
 	
 	
 	private void setup1() {
 
-		graph=new GeneralGraphs<>();
-		mGraph=new MatrixGraph<>(5);
+		graph=new Grafo(false);
 		
 	}
 	
@@ -31,16 +26,14 @@ class GeneralGraphsTest {
 	
 	private void setup2() {
 
-		graph=new GeneralGraphs<>();		
+		graph=new Grafo(false);		
 	}
 	
 	@Test
 	void testDFS() {
 		setup1();
 
-		City city= new City("Cali");
-		Vertex v = new Vertex((Comparable) city);
-		graph.DFS(mGraph, v);
+
 		
 	}
 

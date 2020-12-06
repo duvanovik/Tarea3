@@ -23,6 +23,12 @@ After generating the route we can see on the map how the other cities disappeare
 [Engineering report](https://github.com/duvanovik/Tarea3/blob/master/docs/Enunciado%20del%20problema.docx)
 
 
+# SOFTWARE COMPLETED
+
+**Video demonstration of software functionality**
+[![Watch the video](https://raw.githubusercontent.com/duvanovik/Tarea3/master/resources/readmeMiniatura.png)](https://www.youtube.com/watch?v=5UXOREnuOqE&feature=youtu.be)
+
+
 **Technical conditions**
 
 Language: Java

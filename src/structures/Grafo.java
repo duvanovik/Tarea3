@@ -171,7 +171,37 @@ public class Grafo{
         return orden;
     }
 
-    public ArrayList<ArrayList<String>> caminos(String vo, String vd){
+    /**
+     * Metodo encargado de devolver una Road con las ciudades del camino más corto entre el origen y el destino.
+     * @param orig - Ciudad de origen
+     * @param dest - Ciudad de destino
+     * @return Road con el camino.
+     */
+    public Road caminoMasCorto(String orig, String dest) {
+    	
+        ArrayList<ArrayList<String>> cam = caminos(orig,dest);
+        int ultimoCamino=Integer.MAX_VALUE;
+        ArrayList<String> camino=new ArrayList<String>();
+		for(ArrayList<String> n:cam) {
+			if(n.size()<ultimoCamino) {
+				ultimoCamino=n.size();
+				camino=n;
+			}
+			
+		}
+    	Road road=new Road(camino);
+		
+    	return road;
+    }
+    
+    
+    /**
+     * Metodo auxiliar de caminoMasCorto.
+     * @param vo - Ciudad origen
+     * @param vd - Ciudad destino
+     * @return
+     */
+    private ArrayList<ArrayList<String>> caminos(String vo, String vd){
         ArrayList<ArrayList<String>> res = new ArrayList<>();
         ArrayList<String> camino = new ArrayList<>();
         camino.add(vo);
@@ -188,6 +218,13 @@ public class Grafo{
 
     
 
+    /**
+     * Metodo auxiliar de caminos.
+     * @param vo
+     * @param vd
+     * @param camino
+     * @param res
+     */
     private void caminos(String vo, String vd, ArrayList<String> camino, ArrayList<ArrayList<String>> res){
         if(vo.equals(vd)){
         	
@@ -213,9 +250,9 @@ public class Grafo{
     
     /**
      * Este método se encarga de calcular la distancia entre dos ciudades
-     * @param orig
-     * @param dest
-     * @return
+     * @param orig- Ciudad origen
+     * @param dest- Ciudad destino
+     * @return distancia en kilometros entre las ciudades.
      */
     public int distanciaEntreCiudades(String orig, String dest) {
     	int distancia=0;
@@ -232,25 +269,14 @@ public class Grafo{
     }
     
     
-    public Road caminoMasCorto(String orig, String dest) {
-    	
-        ArrayList<ArrayList<String>> cam = caminos(orig,dest);
-        int ultimoCamino=Integer.MAX_VALUE;
-        ArrayList<String> camino=new ArrayList<String>();
-		for(ArrayList<String> n:cam) {
-			if(n.size()<ultimoCamino) {
-				ultimoCamino=n.size();
-				camino=n;
-			}
-			
-		}
-    	Road road=new Road(camino);
-		
-    	return road;
-    }
+
     
     
-    
+    /**
+     * Metodo dijkstra
+     * @param vo - Ciudad de origen
+     * @return   HashMap con la distancia desde la ciudad de origen hasta las demás.
+     */
     public HashMap<String, Integer> dijkstra(String vo){
         HashMap<String, Integer> dist = new HashMap<>();
         PriorityQueue<String> cola = new PriorityQueue<>();
@@ -279,7 +305,11 @@ public class Grafo{
     
     
 
-    
+    /**
+     * Metodo bellman
+     * @param ciudad de origen.
+     * @return  HashMap con la distancia desde la ciudad de origen hasta las demás.
+     */
     public HashMap<String, Integer> bellman(String vo){
         HashMap<String, Integer> dist = new HashMap<>();
         for(String k : grafo.keySet()){

@@ -6,11 +6,11 @@ This software is responsible for finding the shortest route between two points o
 
 You can select 2 points within the map that represent cities in Colombia, and then press the "Calculate" button to generate the route and see some relevant data.
 
-![generate route](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/resources/readme1.png)
+![generate route](https://raw.githubusercontent.com/duvanovik/Tarea3/master/resources/readme1.png)
 
 After generating the route we can see on the map how the other cities disappeared and now a road appears which indicates the path to take to reach our destination.
 
-![generate route](https://github.com/duvanovik/Tarea3/blob/master/Tarea3/Resources/readme2.png)
+![generate route](https://raw.githubusercontent.com/duvanovik/Tarea3/master/resources/readme2.png)
 
 # DOCUMENTATION
 

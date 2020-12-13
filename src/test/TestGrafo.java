@@ -4,21 +4,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import structures.Grafo;
+import structures.GrafoLista;
 
 class TestGrafo {
 
-private Grafo graph;
+private GrafoLista graph;
 	
 	
 	private void setup1() {
 
-		graph=new Grafo(false);		
+		graph=new GrafoLista(false);		
 	}
 	
 	private void setup2() {
 
-		graph=new Grafo(false);
+		graph=new GrafoLista(false);
 		
 		graph.agregarVertice("A");
 		graph.agregarVertice("B");
@@ -34,7 +34,7 @@ private Grafo graph;
 	
 	private void setup3() {
 
-		graph=new Grafo(false);
+		graph=new GrafoLista(false);
 		
 		graph.agregarVertice("A");
 
@@ -44,7 +44,7 @@ private Grafo graph;
 	
 	private void setup4() {
 
-		graph=new Grafo(false);
+		graph=new GrafoLista(false);
 		
 		graph.agregarVertice("A");
 		graph.agregarVertice("B");

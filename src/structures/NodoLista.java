@@ -1,9 +1,9 @@
 package structures;
 
-public class Nodo{  
+public class NodoLista{  
     private String vertice;
     private int costo;
-    public Nodo(String ver, int costo){
+    public NodoLista(String ver, int costo){
         vertice = ver;
         this.costo = costo;
     }

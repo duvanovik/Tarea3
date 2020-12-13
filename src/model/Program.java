@@ -1,14 +1,14 @@
 package model;
 
-import structures.Grafo;
+import structures.GrafoLista;
 
 public class Program {
 
-	private Grafo g;
+	private GrafoLista g;
 	
 	
 	public Program() {
-		g=new Grafo(false);
+		g=new GrafoLista(false);
 		addCitys();
 		addRoads();
 	}
@@ -76,12 +76,12 @@ public class Program {
 	}
 
 
-	public Grafo getG() {
+	public GrafoLista getG() {
 		return g;
 	}
 
 
-	public void setG(Grafo g) {
+	public void setG(GrafoLista g) {
 		this.g = g;
 	}
 	

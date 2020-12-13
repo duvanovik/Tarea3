@@ -6,14 +6,14 @@ import model.Road;
 
 import java.util.ArrayList;
 import java.util.*;
-public class Grafo{
-    private HashMap<String, ArrayList<Nodo>> grafo;
+public class GrafoLista{
+    private HashMap<String, ArrayList<NodoLista>> grafo;
     private boolean dirigido;
     private int cantidadVertices;
     private int cantidadAristas;
     
-    public Grafo(boolean dir){
-        grafo = new HashMap<String, ArrayList<Nodo>>();
+    public GrafoLista(boolean dir){
+        grafo = new HashMap<String, ArrayList<NodoLista>>();
         dirigido = dir;
         cantidadAristas=0;
         cantidadVertices=0;
@@ -28,12 +28,12 @@ public class Grafo{
     public boolean agregarArista(String orig, String dest, int costo){
     	
         if(grafo.containsKey(orig)){        
-        grafo.get(orig).add(new Nodo(dest,costo));
+        grafo.get(orig).add(new NodoLista(dest,costo));
         }
         
         if(!dirigido){
             if(grafo.containsKey(dest)){        
-                grafo.get(dest).add(new Nodo(orig,costo));
+                grafo.get(dest).add(new NodoLista(orig,costo));
                 cantidadAristas++;
                 }  
         }
@@ -73,11 +73,11 @@ public class Grafo{
      * @param dest
      */
     public boolean elimArista(String ori, String dest){
-        ArrayList<Nodo> lista= grafo.get(ori);
+        ArrayList<NodoLista> lista= grafo.get(ori);
         boolean bb = false;
         if(lista != null){
             for(int i=0; i<lista.size() && !bb; i++){
-                Nodo ac = lista.get(i);
+                NodoLista ac = lista.get(i);
                 if(ac.getVertice().equals(dest)){
                     lista.remove(i);
                     bb = true;
@@ -95,10 +95,10 @@ public class Grafo{
      * @param v - El vertice de tipo String
      */
     public void eliminarVertice(String v){
-        ArrayList<Nodo> lista = grafo.get(v);
+        ArrayList<NodoLista> lista = grafo.get(v);
         ArrayList<String> destinos = new ArrayList<>();
         if(lista!=null) {
-        for(Nodo n : lista){
+        for(NodoLista n : lista){
             destinos.add(n.getVertice());
         }
         grafo.remove(v);
@@ -117,7 +117,7 @@ public class Grafo{
     public boolean agregarVertice(String v){
     	
     	if(!grafo.containsKey(v)) {
-        grafo.put(v, new ArrayList<Nodo>());
+        grafo.put(v, new ArrayList<NodoLista>());
         cantidadVertices++;
         return true;
     	}else {
@@ -134,9 +134,9 @@ public class Grafo{
         while(!cola.isEmpty()){
             String ac = cola.poll();
             orden.add(ac);
-            ArrayList<Nodo> vecinos = grafo.get(ac);
+            ArrayList<NodoLista> vecinos = grafo.get(ac);
             if(vecinos != null){
-                for(Nodo n : vecinos){
+                for(NodoLista n : vecinos){
                     String destino = n.getVertice();
                     if(!marcado.contains(destino)){
                         marcado.add(destino);
@@ -157,9 +157,9 @@ public class Grafo{
         while(!pila.isEmpty()){
             String ac = pila.pop();
             orden.add(ac);
-            ArrayList<Nodo> vecinos = grafo.get(ac);
+            ArrayList<NodoLista> vecinos = grafo.get(ac);
             if(vecinos != null){
-                for(Nodo n : vecinos){
+                for(NodoLista n : vecinos){
                     String destino = n.getVertice();
                     if(!marcado.contains(destino)){
                         marcado.add(destino);
@@ -205,8 +205,8 @@ public class Grafo{
         ArrayList<ArrayList<String>> res = new ArrayList<>();
         ArrayList<String> camino = new ArrayList<>();
         camino.add(vo);
-        ArrayList<Nodo> vecinos = grafo.get(vo);
-        for(Nodo n : vecinos){
+        ArrayList<NodoLista> vecinos = grafo.get(vo);
+        for(NodoLista n : vecinos){
             String act = n.getVertice();
             ArrayList<String> copia = (ArrayList<String>)camino.clone();
             copia.add(act);
@@ -230,9 +230,9 @@ public class Grafo{
         	
             res.add(camino);
         }else{
-            ArrayList<Nodo> vecinos = grafo.get(vo);
+            ArrayList<NodoLista> vecinos = grafo.get(vo);
             if(vecinos!=null){
-                for(Nodo n : vecinos){
+                for(NodoLista n : vecinos){
                     String act = n.getVertice();
                     ArrayList<String> copia = (ArrayList<String>)camino.clone();
                     if(!copia.contains(act)){
@@ -287,9 +287,9 @@ public class Grafo{
         cola.add(vo);
         while(!cola.isEmpty()){
             String ac = cola.poll();
-            ArrayList<Nodo> vecinos = grafo.get(ac);
+            ArrayList<NodoLista> vecinos = grafo.get(ac);
             if(vecinos != null){
-                for(Nodo n : vecinos){
+                for(NodoLista n : vecinos){
                     String vertSig = n.getVertice();
                     int costo = n.getCosto();
                     if(dist.get(ac)+costo < dist.get(vertSig)){
@@ -319,9 +319,9 @@ public class Grafo{
 
         for(int i=0; i<grafo.size()-1; i++){
             for(String ac : grafo.keySet()){
-                ArrayList<Nodo> vecinos = grafo.get(ac);
+                ArrayList<NodoLista> vecinos = grafo.get(ac);
                 if(vecinos != null){
-                    for(Nodo n : vecinos){
+                    for(NodoLista n : vecinos){
                         String vertSig = n.getVertice();
                         int costo = n.getCosto();
                         if(dist.get(ac)+costo < dist.get(vertSig)){
@@ -335,11 +335,11 @@ public class Grafo{
         return dist;
     }
 
-	public HashMap<String, ArrayList<Nodo>> getGrafo() {
+	public HashMap<String, ArrayList<NodoLista>> getGrafo() {
 		return grafo;
 	}
 
-	public void setGrafo(HashMap<String, ArrayList<Nodo>> grafo) {
+	public void setGrafo(HashMap<String, ArrayList<NodoLista>> grafo) {
 		this.grafo = grafo;
 	}
 

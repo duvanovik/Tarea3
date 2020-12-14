@@ -1,6 +1,8 @@
 package structures;
 import java.util.*;
 
+import model.Road;
+
 
 
 
@@ -310,5 +312,57 @@ public class GrafoMatriz<T> {
     	
     	return distancia;
     }
+    
+  public ArrayList<T>  caminoMasCorto(T orig, T dest) {
+    	
+        ArrayList<ArrayList<T>> cam = caminos(orig,dest);
+        int ultimoCamino=Integer.MAX_VALUE;
+        ArrayList<T> camino=new ArrayList<T>();
+		for(ArrayList<T> n:cam) {
+			if(n.size()<ultimoCamino) {
+				ultimoCamino=n.size();
+				camino=n;
+			}
+			
+		}
+
+		
+    	return camino;
+    }
+  
+  private ArrayList<ArrayList<T>> caminos(T vo, T vd){
+      ArrayList<ArrayList<T>> res = new ArrayList<>();
+      ArrayList<T> camino = new ArrayList<>();
+      camino.add(vo);
+      NodoMatriz<T> vo1 = buscarNodo(vo);
+      ArrayList<NodoMatriz<T>> vecinos = getVecinos(vo1);
+      for(NodoMatriz<T> n : vecinos){
+          T act = n.getValue();
+          ArrayList<T> copia = (ArrayList<T>)camino.clone();
+          copia.add(act);
+          caminos(act, vd, copia, res);
+      }
+      return res;
+  }
+  private void caminos(T vo, T vd, ArrayList<T> camino, ArrayList<ArrayList<T>> res){
+      if(vo.equals(vd)){
+      	
+          res.add(camino);
+      }else{
+    	  NodoMatriz<T> vo1 = buscarNodo(vo);
+          ArrayList<NodoMatriz<T>> vecinos = getVecinos(vo1);
+          if(vecinos!=null){
+              for(NodoMatriz<T> n : vecinos){
+                  T act = n.getValue();
+                  ArrayList<T> copia = (ArrayList<T>)camino.clone();
+                  if(!copia.contains(act)){
+                      copia.add(act);
+                      caminos(act, vd, copia, res);
+                  }
+              }
+          }
+
+      }
+  }
 	
 }

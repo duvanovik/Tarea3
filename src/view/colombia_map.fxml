@@ -98,5 +98,7 @@
          </image>
       </ImageView>
       <Text fx:id="textCiudades" layoutX="374.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+      <Text fx:id="txtGrafoUnoDos" layoutX="28.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grafo" />
+      <CheckBox fx:id="grafoMatrizSelected" layoutX="29.0" layoutY="50.0" mnemonicParsing="false" text="Matriz" />
    </children>
 </AnchorPane>

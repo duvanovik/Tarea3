@@ -27,10 +27,10 @@ class testGrafoMatriz {
 		graph.agregarNodo("C");
 		graph.agregarNodo("D");
 		
-		graph.AgregarArista("A", "B", 2);
-		graph.AgregarArista("B", "C", 3);
-		graph.AgregarArista("C", "D", 2);
-		graph.AgregarArista("D", "A", 4);
+		graph.agregarArista("A", "B", 2);
+		graph.agregarArista("B", "C", 3);
+		graph.agregarArista("C", "D", 2);
+		graph.agregarArista("D", "A", 4);
 		
 	}
 	

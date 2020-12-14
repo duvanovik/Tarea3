@@ -142,7 +142,7 @@ public class GrafoMatriz<T> {
 		totalnodos--;
 	}
 
-	public void AgregarArista(T x, T y, double w) {
+	public void agregarArista(T x, T y, double w) {
 
 		NodoMatriz<T> initial = buscarNodo(x);
 		NodoMatriz<T> destination = buscarNodo(y);
@@ -165,6 +165,8 @@ public class GrafoMatriz<T> {
 		}
 		totalAristas++;	
 	}
+	
+	
 	public void borrarArista(T x, T y) {
 
 		if (buscarNodo(x)!=null && buscarNodo(y)!=null) {

@@ -14,6 +14,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import model.Program;
+import model.Road;
 
 public class Colombia_Map_Controller implements Initializable{
 
@@ -44,7 +45,11 @@ public class Colombia_Map_Controller implements Initializable{
     @FXML
     private Text txtDistancia,txtCiudades,txtTiempo,txtOrigenDestino,textCiudades;
     
+    @FXML
+    private Text txtGrafoUnoDos;
 
+    @FXML
+    private CheckBox grafoMatrizSelected;
     
     private String origen;
     private String destino;
@@ -56,6 +61,12 @@ public class Colombia_Map_Controller implements Initializable{
     	origen="";
     	destino="";
 
+    	if(grafoMatrizSelected.isSelected()) {
+    		programita.crearGrafoMatriz();
+    	}else {
+    		programita.crearGrafoLista();
+    	}
+    	
     	if(!tomarOrigenDestino()) {
 			Alert alert= new Alert(AlertType.INFORMATION);
 			alert.setHeaderText(null);
@@ -67,9 +78,14 @@ public class Colombia_Map_Controller implements Initializable{
 
     	}else {
     		txtOrigenDestino.setText(origen+" - "+destino);
+
+    		
+    		if(!grafoMatrizSelected.isSelected()) {
+    			txtGrafoUnoDos.setText("Grafo mediante Listas");
+    			
     		int distancia=programita.getG().distanciaEntreCiudades(origen, destino);
     		txtDistancia.setText("Distancia: "+distancia+" Kilometros");
-    		txtTiempo.setText("Tiempo: "+String.format("%.2f", ((double)distancia/70))+" Horas");
+    		txtTiempo.setText("Tiempo: "+String.format("%.2f", ((double)distancia/70))+" Horas");   		
     		ArrayList<String> citys=programita.getG().caminoMasCorto(origen, destino).getCitys();
     		txtCiudades.setText("Ciudades: "+citys.size());
     		String rutaCiudades="\n\t CIUDADES\n\n";
@@ -78,6 +94,25 @@ public class Colombia_Map_Controller implements Initializable{
     		}
     		textCiudades.setText(rutaCiudades);
     		ponerVisibleCaminos(programita.getG().caminoMasCorto(origen, destino).getRoads());
+    	
+    		}else {
+    			txtGrafoUnoDos.setText("Grafo mediante Matriz de adyacencia");
+
+        		int distancia=(int) programita.getGm().distanciaEntreCiudadesBellman(origen, destino);
+        		txtDistancia.setText("Distancia: "+distancia+" Kilometros");
+        		txtTiempo.setText("Tiempo: "+String.format("%.2f", ((double)distancia/70))+" Horas");   		
+        		ArrayList<String> citys=programita.getGm().caminoMasCorto(origen, destino);
+            	Road road=new Road(citys);
+
+        		txtCiudades.setText("Ciudades: "+citys.size());
+        		String rutaCiudades="\n\t CIUDADES\n\n";
+        		for(int i=0;i<citys.size();i++) {
+        			rutaCiudades+="\t - "+citys.get(i)+"\n";
+        		}
+        		textCiudades.setText(rutaCiudades);
+        		ponerVisibleCaminos(road.getRoads());    		
+    			
+    		}
     	}
     	
     }
@@ -193,6 +228,9 @@ public class Colombia_Map_Controller implements Initializable{
     		} 
     		if(opcion1.equals("Popayan_Cali")||opcion1.equals("Cali_Popayan")||opcion2.equals("Popayan_Cali")||opcion2.equals("Cali_Popayan")) {
     			Popayan_Cali.setVisible(true);
+    		} 
+    		if(opcion1.equals("Pasto_Popayan")||opcion1.equals("Popayan_Pasto")||opcion2.equals("Pasto_Popayan")||opcion2.equals("Popayan_Pasto")) {
+    			Pasto_Popayan.setVisible(true);
     		} 
     	}
     }

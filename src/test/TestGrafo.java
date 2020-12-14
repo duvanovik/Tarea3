@@ -2,9 +2,14 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.junit.jupiter.api.Test;
 
 import structures.GrafoLista;
+import structures.NodoLista;
+import structures.NodoMatriz;
 
 class TestGrafo {
 
@@ -241,6 +246,8 @@ private GrafoLista graph;
 
 		
 	}	
+	
+
 	
 
 }
